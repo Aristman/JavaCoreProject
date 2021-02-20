@@ -17,7 +17,7 @@ public class Test2Code {
         System.out.println(Arrays.toString(task7(array1, -1)));
     }
 
-    public static void task1() {
+    private static void task1() {
         System.out.println("Задание №1");
         int[] binaryMassive = {1, 0, 0, 1, 1, 1, 0, 1};
         System.out.println(Arrays.toString(binaryMassive) + " задан массив");
