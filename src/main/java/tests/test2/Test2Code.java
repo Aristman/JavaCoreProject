@@ -1,5 +1,6 @@
 package tests.test2;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Test2Code {
@@ -10,8 +11,10 @@ public class Test2Code {
         task3();
         task4();
         task5();
-        task6();
-        task7();
+        int[] array = {2, 2, 2, 1, 2, 2, 10, 1};
+        System.out.println(task6(array));
+        int[] array1 = {2, 3, 88, 1, 55, 12, 10, 1};
+        System.out.println(Arrays.toString(task7(array1, -1)));
     }
 
     public static void task1() {
@@ -72,11 +75,29 @@ public class Test2Code {
         System.out.println("Максимальное число массива = " + maxNumber);
     }
 
-    private static void task6() {
-
+    private static boolean task6(int[] array) {
+        int sumOfRight = Arrays.stream(array).sum();
+        int sumOfLeft = 0;
+        for (int itemArray : array) {
+            sumOfLeft += itemArray;
+            sumOfRight -= itemArray;
+            if (sumOfLeft == sumOfRight) return true;
+        }
+        return false;
     }
 
-    private static void task7() {
-
+    private static int[] task7(int[] array, int n) {
+        int sign = Math.abs(n)/n;
+        int replacedItem;
+        int replacedI;
+        for (int i = 0; i < Math.abs(n); i++) {
+            for (int replaceIndex = 0; replaceIndex < array.length - 1; replaceIndex++) {
+                replacedI = n > 0? replaceIndex : array.length - 1 - replaceIndex;
+                replacedItem = array[replacedI + sign];
+                array[replacedI + sign] = array[replacedI];
+                array[replacedI] = replacedItem;
+            }
+        }
+        return array;
     }
 }
