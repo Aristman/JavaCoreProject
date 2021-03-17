@@ -16,7 +16,7 @@ public class App {
         barriers[3] = new Wall(14);
 
         for (Barrier barrier : barriers) {
-            System.out.printf("Препятствие %s высотой %f\n", barrier.getName(), barrier.getPassValue());
+            System.out.printf("Препятствие %s величиной %f\n", barrier.getName(), barrier.getPassValue());
             for (Member member : members) {
                 if (member.isMember()) {
                     member.setStateMember(
