@@ -1,7 +1,7 @@
 package tests.test8;
 
 public class Human implements Member {
-    final String NAME = "Человек";
+    final static String NAME = "Человек";
     private final float maxLength;
     private final float maxHeight;
     private boolean isMember = true;

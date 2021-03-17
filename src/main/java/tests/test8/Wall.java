@@ -1,8 +1,8 @@
 package tests.test8;
 
 public class Wall implements Barrier {
-    private final float height;
     final static String NAME = "Стена";
+    private final float height;
 
     public Wall(float height) {
         this.height = height;

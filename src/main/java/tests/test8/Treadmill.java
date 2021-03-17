@@ -1,8 +1,8 @@
 package tests.test8;
 
 public class Treadmill implements Barrier {
-    private final float length;
     final static String NAME = "Беговая дорожка";
+    private final float length;
 
     public Treadmill(float length) {
         this.length = length;
