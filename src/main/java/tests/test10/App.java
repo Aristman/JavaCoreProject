@@ -41,6 +41,7 @@ public class App {
     private void task2() {
         PhoneBook book = new PhoneBook();
         book.add("Иванов", "2334234");
+        book.add("Иванов", "2334234");
         book.add("Петров", "58873939030");
         book.add("Сидоров", "24872987423");
         book.add("Иванов", "985888484");
