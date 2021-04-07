@@ -1,10 +1,8 @@
 package tests.test13;
 
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Road extends Stage {
-    private final ExecutorService threadPool;
 
     public Road(int length) {
         this.length = length;

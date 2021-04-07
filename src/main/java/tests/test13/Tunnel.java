@@ -1,17 +1,16 @@
 package tests.test13;
 
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Tunnel extends Stage {
-    private final ExecutorService threadPool;
+
 
     public Tunnel(int maxCars) {
         this.length = 80;
         this.description = "Тоннель " + length + " метров";
         this.threadPool = Executors.newFixedThreadPool(maxCars);
-        this.threadPool.shutdown();
     }
+
 
     @Override
     public void go(Car c) {
