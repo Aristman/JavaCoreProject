@@ -1,7 +1,9 @@
 package tests.test13;
 
+
 public class Car implements Runnable {
     private static int CARS_COUNT;
+    private volatile boolean isEndStage = true;
     private Race race;
     private int speed;
     private String name;
@@ -31,7 +33,18 @@ public class Car implements Runnable {
             e.printStackTrace();
         }
         for (int i = 0; i < race.getStages().size(); i++) {
+            while (!isEndStage) {
+                Thread.onSpinWait();
+            }
             race.getStages().get(i).go(this);
         }
+    }
+
+    public void beginStage() {
+        isEndStage = true;
+    }
+
+    public void endStage() {
+        isEndStage = false;
     }
 }
